@@ -25,6 +25,7 @@ ol {
   --grey-paragraphs: #434455;
   --off-white: #f4f4fd;
   --white: #fff;
+  --transition-variable: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .section {
   padding: 120px 0;
@@ -102,12 +103,43 @@ ol {
   display: inline-block;
   padding: 24px 0;
   text-decoration: none;
+  transition: color 250ms (--transition-variable);
+  position: relative;
 }
-
+.page-studio-link {
+  color: #404bbf;
+  position: relative;
+}
+.page-studio-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 2px;
+  bottom: -1px;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+}
+.page-portfolio-link {
+  color: #404bbf;
+  position: relative;
+}
+.page-portfolio-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 2px;
+  bottom: -1px;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+}
 .page-description:hover,
-.page-description:focus {
+.page-description:focus,
+.address-description:hover .address-description:focus {
   color: #404bbf;
 }
+
 /* Contacts */
 .contact {
   font-style: normal;
