@@ -26,6 +26,7 @@ ol {
   --off-white: #f4f4fd;
   --white: #fff;
   --transition-variable: cubic-bezier(0.4, 0, 0.2, 1);
+  --modal-data-background: #fcfcfc;
 }
 .section {
   padding: 120px 0;
@@ -564,8 +565,8 @@ h2 {
 .app-list p {
   position: absolute;
   inset: 0;
-  color: #4d5ae5;
-  background-color: #f4f4fd;
+  color: #f4f4fd;
+  background-color: #4d5ae5;
   font-family: Roboto;
   font-style: normal;
   font-size: 16px;
@@ -577,7 +578,10 @@ h2 {
   transform: translateY(100%);
   transition: transform 250ms var(--transition-variable);
 }
-
+.photos-link:hover p,
+.photos-link:focus p {
+  transform: translateY(0%);
+}
 .service-box {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
@@ -624,4 +628,61 @@ h2 {
   background: #2f303a;
   text-align: center;
   padding: 200px 0;
+}
+
+/*/Data modal/*/
+.data-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity 250ms --transition-variable visibility 250ms
+    --transition-variable;
+}
+.data-modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 408px;
+  min-height: 584px;
+  border-radius: 4px;
+  background-color: var(--modal-data-background);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  transition: transform 250ms --transition-variable;
+}
+.data-modal-button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 24px;
+  right: 24px;
+  background-color: #e7e9fc;
+  fill: var(--navy-blue);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 250ms --transition-variable,
+    border 250ms var(--transition-variable);
+}
+.data-modal-button:hover,
+.data-modal-button:focus {
+  border: none;
+  background-color: #404bbf;
+  fill: #fff;
+}
+.data-modal-icon {
+  transition: fill 250ms --transition-variable;
+}
+
+.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
 }
