@@ -678,7 +678,7 @@ h2 {
   fill: #fff;
 }
 .data-modal-icon {
-  transition: fill 250ms --transition-variable;
+  transition: fill 250ms var(--transition-variable);
 }
 
 .is-hidden {
